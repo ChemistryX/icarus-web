@@ -6,11 +6,12 @@ ruby "3.1.0"
 gem "rails", "~> 7.0.2"
 gem "mongoid", git: "https://github.com/mongodb/mongoid"
 gem "devise"
+gem 'devise-i18n'
 gem "sprockets-rails"
 gem "haml-rails"
 gem "puma", "~> 5.0"
-gem "importmap-rails"
 gem "tailwindcss-rails"
+gem "heroicon"
 gem "jbuilder"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

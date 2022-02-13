@@ -1,5 +1,5 @@
 !!!
-%html
+%html.scroll-smooth
 	%head
 		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
 		%title 이카루스
@@ -8,9 +8,13 @@
 		= csp_meta_tag
 		= stylesheet_link_tag "tailwind"
 		= stylesheet_link_tag "application"
-	%body
-		- if notice
-			%p.notice= notice
-		- elsif alert
-			%p.alert= alert
-		= yield
+	%body.bg-gray-100
+		= render "shared/navbar"
+		.container.px-12.mx-auto
+			- if notice
+				.my-4.p-4.mb-4.text-sm.text-green-700.bg-green-100.rounded-lg= notice
+			- elsif alert
+				.my-4.p-4.mb-4.text-sm.text-red-700.bg-red-100.rounded-lg= alert
+			= yield
+		= render "shared/footer"
+		= javascript_include_tag 'https://unpkg.com/flowbite@1.3.3/dist/flowbite.js'

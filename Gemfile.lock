@@ -92,6 +92,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.1)
+      devise (>= 4.8.0)
     digest (3.1.0)
     erubi (1.10.0)
     erubis (2.7.0)
@@ -106,6 +108,8 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    heroicon (0.4.0)
+      rails (>= 5.2)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -113,9 +117,6 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.2)
-      actionpack (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.5.11)
     io-wait (0.2.1)
     irb (1.4.1)
@@ -231,8 +232,9 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  devise-i18n
   haml-rails
-  importmap-rails
+  heroicon
   jbuilder
   mongoid!
   puma (~> 5.0)
