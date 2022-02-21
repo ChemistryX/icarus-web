@@ -3,6 +3,6 @@
 		= render 'dashboard/base/sidebar'
 		#content.flex-auto.w-full
 			.flex.w-full.p-6
-				.flex-none
+				.flex-auto
 					= if content_for?(:dashboard_content) then yield :dashboard_content else yield end
 = render template: 'layouts/application'

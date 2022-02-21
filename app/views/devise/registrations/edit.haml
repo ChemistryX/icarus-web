@@ -1,32 +1,26 @@
-%h2 계정 수정
+%h2.my-2.text-3xl.text-black.leading-tight.font-bold 계정
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email, "이메일"
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+  .mb-6
+    = f.label :email, "이메일", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.email_field :email, autofocus: true, autocomplete: "email", disabled: true, readonly: true, class: "shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed"
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password, "비밀번호"
+  .mb-6
+    = f.label :password, "비밀번호", class: "block mb-2 text-sm font-medium text-gray-900"
     %i (변경을 원하지 않는다면 빈칸으로 남겨주세요.)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password, autocomplete: "new-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation, "비밀번호 확인"
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password, "현재 비밀번호"
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "수정"
-%h3 계정 삭제
-= button_to "계정 삭제", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
+      %p.mt-2.text-sm.text-gray-500 비밀번호는 #{@minimum_password_length}자 이상이어야 합니다.
+  .mb-6
+    = f.label :password_confirmation, "비밀번호 확인", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+  .mb-6
+    = f.label :current_password, "현재 비밀번호", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.password_field :current_password, autocomplete: "current-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+  .mb-6
+    = f.submit "수정", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+%hr/
+%h3.my-4.text-2xl.text-black.leading-tight.font-semibold 계정 삭제
+= button_to "계정 삭제", registration_path(resource_name), class: "text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center", data: { confirm: "Are you sure?" }, method: :delete
