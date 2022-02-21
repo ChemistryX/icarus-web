@@ -1,18 +1,19 @@
-%h2= t('.change_your_password')
+%h2 비밀번호 변경
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   = f.hidden_field :reset_password_token
   .field
-    = f.label :password, t('.new_password')
+    = f.label :password, "새 비밀번호"
     %br/
     - if @minimum_password_length
-      %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
+      %em
+        비밀번호는 #{@minimum_password_length}자 이상이어야 합니다.
       %br/
     = f.password_field :password, autofocus: true, autocomplete: "new-password"
   .field
-    = f.label :password_confirmation, t('.confirm_new_password')
+    = f.label :password_confirmation, "비밀번호 확인"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit t('.change_my_password')
+    = f.submit "비밀번호 변경"
 = render "devise/shared/links"

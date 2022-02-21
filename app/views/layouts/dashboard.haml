@@ -1,0 +1,8 @@
+= content_for :content do
+	.flex
+		= render 'dashboard/base/sidebar'
+		#content.flex-auto.w-full
+			.flex.w-full.p-6
+				.flex-none
+					= if content_for?(:dashboard_content) then yield :dashboard_content else yield end
+= render template: 'layouts/application'

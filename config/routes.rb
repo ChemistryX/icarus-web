@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources 'dashboard'
+  devise_for :users, controllers: { registrations: 'dashboard/profile' }
+  namespace :dashboard do
+	root "base#index"
+	resources :profile
+  end
   root "home#index"
 end

@@ -1,12 +1,12 @@
-%aside.w-64{"aria-label" => "Sidebar"}
+%aside#sidebar.w-64.inset-0.z-20.flex-none.h-auto
 	.px-3.py-4.overflow-y-auto.rounded
 		%ul.space-y-2
 			%li
-				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href="")
+				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_root_path)
 					= heroicon "view-grid", variant: :solid, options: { class: "flex-shrink-0 w-6 h-6"}
 					%span.ml-3 대시보드
 		%ul.space-y-2.border-t.border-gray-200
 			%li
-				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href="")
+				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=edit_user_registration_path)
 					= heroicon "user-circle", variant: :solid, options: { class: "flex-shrink-0 w-6 h-6"}
 					%span.ml-3 계정
