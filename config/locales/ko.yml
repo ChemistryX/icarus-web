@@ -1,0 +1,17 @@
+ko:
+  errors:
+    format: "%{message}"
+  mongoid:
+    attributes:
+      user:
+        email: "이메일"
+        password: "비밀번호"
+        current_password: "현재 비밀번호"
+    errors:
+      messages:
+        blank: "%{attribute}에 내용을 입력해 주세요."
+        taken: "%{attribute}은(는) 이미 사용중입니다."
+        confirmation: "%{attribute}은(는) 서로 일치해야 합니다."
+        invalid: "%{attribute}은(는) 올바르지 않은 값입니다."
+        not_found: "%{attribute}을(를) 찾을 수 없습니다."
+
