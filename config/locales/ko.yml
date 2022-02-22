@@ -6,7 +6,12 @@ ko:
       user:
         email: "이메일"
         password: "비밀번호"
+        password_confirmation: "비밀번호 확인"
         current_password: "현재 비밀번호"
+        created_at: "가입 일자"
+        remember_me: "로그인 상태 유지"
+        admin: "관리자"
+        suspended: "이용 정지"
     errors:
       messages:
         blank: "%{attribute}에 내용을 입력해 주세요."

@@ -8,13 +8,13 @@ ko:
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
       already_authenticated: "이미 로그인 되어 있습니다."
-      inactive: "Your account is not activated yet."
+      inactive: "계정 이용이 정지되었습니다. 자세한 사항은 이메일로 문의해주세요."
       invalid: "%{authentication_keys} 또는 비밀번호가 올바르지 않습니다."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "%{authentication_keys} 또는 비밀번호가 올바르지 않습니다."
       timeout: "세션이 만료되었습니다. 계속하려면 다시 로그인해 주세요."
-      unauthenticated: "계속하려면 로그인하거나 회원 가입을 해야 합니다."
+      unauthenticated: "계속하려면 로그인 해야 합니다."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:

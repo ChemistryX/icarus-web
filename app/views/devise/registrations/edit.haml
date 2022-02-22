@@ -3,23 +3,23 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .mb-6
-    = f.label :email, "이메일", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.label :email, class: "block mb-2 text-sm font-medium text-gray-900"
     = f.email_field :email, autofocus: true, autocomplete: "email", disabled: true, readonly: true, class: "shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed"
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
   .mb-6
     .flex.justify-between.mb-2.text-sm.font-medium.text-gray-900.block
-      = f.label :password, "비밀번호"
+      = f.label :password
       %span.text-gray-500 (변경을 원하지 않는다면 빈칸으로 남겨주세요.)
     = f.password_field :password, autocomplete: "new-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
     - if @minimum_password_length
       %p.mt-2.text-sm.text-gray-500 비밀번호는 #{@minimum_password_length}자 이상이어야 합니다.
   .mb-6
-    = f.label :password_confirmation, "비밀번호 확인", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900"
     = f.password_field :password_confirmation, autocomplete: "new-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
   .mb-6
-    = f.label :current_password, "현재 비밀번호", class: "block mb-2 text-sm font-medium text-gray-900"
+    = f.label :current_password, class: "block mb-2 text-sm font-medium text-gray-900"
     = f.password_field :current_password, autocomplete: "current-password", class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
   .mb-6
     = f.submit "수정", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"

@@ -1,12 +1,23 @@
 %aside#sidebar.w-56.inset-0.z-20.flex-none.h-auto
-	.px-3.py-4.overflow-y-auto.rounded
-		%ul.space-y-2
-			%li
-				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_root_path)
-					= heroicon "view-grid", variant: :solid, options: { class: "flex-shrink-0 w-6 h-6"}
-					%span.ml-3 대시보드
-		%ul.space-y-2.border-t.border-gray-200
-			%li
-				%a.flex.items-center.p-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=edit_user_registration_path)
-					= heroicon "user-circle", variant: :solid, options: { class: "flex-shrink-0 w-6 h-6"}
-					%span.ml-3 계정
+	.px-3.overflow-y-auto.rounded
+		%ul
+			%li.mt-8
+				%h5.mb-2.font-semibold.text-gray-900 일반
+				%ul
+					%li 
+						%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_root_path)
+							= heroicon "view-grid", variant: current_page?(dashboard_root_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+							%span.ml-3 대시보드
+					%li
+						%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=edit_user_registration_path)
+							= heroicon "identification", variant: current_page?(edit_user_registration_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+							%span.ml-3 계정
+			- if current_user.admin?
+				%li.mt-8
+					%h5.mb-2.font-semibold.text-gray-900 관리자
+					%ul
+						%li
+							%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_users_path) 
+								= heroicon "users", variant: current_page?(dashboard_users_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+								%span.ml-3 사용자 목록		
+		

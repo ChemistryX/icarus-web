@@ -23,6 +23,9 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
+  field :admin,              type: Boolean, default: false
+  field :suspended,          type: Boolean, default: false
+
   attr_readonly :email
 
   ## Confirmable
@@ -36,4 +39,13 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
   include Mongoid::Timestamps
+
+  def active_for_authentication?
+	# admin is not affected
+	if self.admin?
+		super
+	else
+    	super && !self.suspended?
+	end
+  end
 end
