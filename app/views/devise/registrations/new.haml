@@ -1,3 +1,4 @@
+- content_for :title do "회원 가입" end
 %h2.my-6.text-3xl.text-black.leading-tight.font-bold 회원 가입
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource

@@ -1,3 +1,4 @@
+- content_for :title do "계정" end
 %h2.my-2.text-3xl.text-black.leading-tight.font-bold 계정
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
