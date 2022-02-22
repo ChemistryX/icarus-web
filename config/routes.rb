@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	root "base#index"
 	resources :profile
 	resources :users
+	resources :plans
   end
   root "home#index"
 end

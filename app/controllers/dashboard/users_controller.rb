@@ -10,10 +10,9 @@ class Dashboard::UsersController < Dashboard::AdminController
 
 	def update
 		if @user.update(user_params)
-			redirect_to dashboard_users_path
-			flash[:notice] = "계정 정보를 업데이트했습니다."
+			redirect_to dashboard_users_path, notice: "계정 정보를 업데이트했습니다."
 		else
-			render :edit
+			render :edit, alert: "계정 정보 업데이트에 실패했습니다."
 		end
 	end
 

@@ -18,6 +18,10 @@
 					%ul
 						%li
 							%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_users_path) 
-								= heroicon "users", variant: current_page?(dashboard_users_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
-								%span.ml-3 사용자 목록		
+								= heroicon "user-group", variant: current_page?(dashboard_users_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+								%span.ml-3 사용자 관리	
+						%li
+							%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_plans_path) 
+								= heroicon "calendar", variant: current_page?(dashboard_plans_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+								%span.ml-3 플랜 관리
 		
