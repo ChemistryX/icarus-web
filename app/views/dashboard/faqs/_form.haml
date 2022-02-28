@@ -1,0 +1,17 @@
+= form_for [:dashboard, @faq] do |f|
+	.mb-6
+		= f.label :question, class: "block mb-2 text-sm font-medium text-gray-900"
+		= f.text_area :question, rows: 2, class: "shadow-sm block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300", required: true
+	.mb-6
+		= f.label :answer, class: "block mb-2 text-sm font-medium text-gray-900"
+		= f.text_area :answer, rows: 4, class: "shadow-sm block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300", required: true
+	.mb-6
+		= f.label :category, class: "block mb-2 text-sm font-medium text-gray-900"
+		= f.select :category, Faq::CATEGORY.map{|c| [Faq.human_attribute_name('category/%s' % c), c]}, {}, {class: "shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"}
+	.mb-6
+		.flex.items-center.mb-6
+			= f.check_box :pinned, class: "w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300"
+			.ml-3.text-sm
+				= f.label :pinned, class: "font-medium text-gray-900"
+	.mb-6
+		= f.submit "저장", class: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"

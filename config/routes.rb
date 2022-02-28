@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 	resources :profile
 	resources :users
 	resources :plans
+	resources :faqs
   end
+  resources :faqs, only: [:index, :show]
   root "home#index"
 end

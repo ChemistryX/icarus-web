@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/choilive/mongoid-enum.git
+  revision: 44f1c6bdbedd97a080b2fc487c5c1b6e01fe00a7
+  specs:
+    mongoid-enum (0.4.0)
+      bigdecimal (~> 2.0)
+      mongoid (>= 5.0, < 8.0)
+
+GIT
   remote: https://github.com/mongodb/mongoid
   revision: 6192c261c6652df0a0a3140d33df4221d60c3491
   specs:
@@ -76,6 +84,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     bcrypt (3.1.16)
+    bigdecimal (2.0.3)
     bindex (0.8.1)
     bootsnap (1.10.3)
       msgpack (~> 1.2)
@@ -244,6 +253,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   mongoid!
+  mongoid-enum!
   puma (~> 5.0)
   rails (~> 7.0.2)
   sprockets-rails

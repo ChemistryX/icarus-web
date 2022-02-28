@@ -24,4 +24,7 @@
 							%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_plans_path) 
 								= heroicon "calendar", variant: current_page?(dashboard_plans_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
 								%span.ml-3 플랜 관리
-		
+						%li
+							%a.flex.items-center.py-2.text-base.font-normal.text-gray-500.rounded-lg.hover:text-gray-900(href=dashboard_faqs_path) 
+								= heroicon "support", variant: current_page?(dashboard_faqs_path) ? :solid : :outline, options: { class: "flex-shrink-0 w-6 h-6"}
+								%span.ml-3 FAQ 관리							

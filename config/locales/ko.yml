@@ -12,6 +12,15 @@ ko:
         remember_me: "로그인 상태 유지"
         admin: "관리자"
         suspended: "이용 정지"
+      faq:
+        question: "질문"
+        answer: "답변"
+        category: "범주"
+        pinned: "고정됨"
+        category/plan: "플랜"
+        category/account: "계정"
+        category/payment: "결제"
+        category/others: "기타"
     errors:
       messages:
         blank: "%{attribute}에 내용을 입력해 주세요."

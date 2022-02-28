@@ -5,6 +5,7 @@ ruby "3.1.0"
 
 gem "rails", "~> 7.0.2"
 gem "mongoid", git: "https://github.com/mongodb/mongoid"
+gem "mongoid-enum", git: "https://github.com/choilive/mongoid-enum.git"
 gem "devise"
 gem "sprockets-rails"
 gem "haml-rails"
