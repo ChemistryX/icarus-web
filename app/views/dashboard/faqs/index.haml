@@ -6,24 +6,21 @@
 	%table.min-w-full
 		%thead.bg-gray-50
 			%tr
-				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 번호
-				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 범주
+				%th.py-3.px-2.text-xs.font-medium.text-center.text-gray-700.tracking-wider 범주
 				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 질문
-				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 답변
 				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 고정됨
 				%th.relative.py-3
 					%span.sr-only 수정
 				%th.relative.py-3
 					%span.sr-only 삭제
 		%tbody
-		- @faqs.each_with_index do |faq, index|
+		- @faqs.each do |faq|
 			%tr.border-b.odd:bg-white.even:bg-gray-50
-				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= index + 1
-				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap.font-medium= Faq.human_attribute_name("category/%s" % faq.category)
+				%td.py-4.px-2.text-center.text-sm.text-gray-900.whitespace-nowrap.font-medium= Faq.human_attribute_name("category/%s" % faq.category)
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= faq.question
-				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= faq.answer
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= faq.pinned? ? "예" : "아니요"
 				%td.py-4.text-sm.text-gray-900.whitespace-nowrap
 					= link_to "수정", edit_dashboard_faq_path(faq), class: "text-blue-600 hover:underline mr-2"
 				%td.py-4.text-sm.text-gray-900.whitespace-nowrap
 					= link_to "삭제", dashboard_faq_path(faq), class: "text-red-600 hover:underline", data: { confirm: "정말로 삭제하시겠습니까?" }, method: :delete
+= paginate @faqs

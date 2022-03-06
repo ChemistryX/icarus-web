@@ -14,6 +14,9 @@ gem "tailwindcss-rails"
 gem "heroicon"
 gem "jbuilder"
 gem 'jquery-rails'
+gem 'kaminari-core'
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]

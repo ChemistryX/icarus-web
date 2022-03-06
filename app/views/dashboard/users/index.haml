@@ -6,7 +6,6 @@
 	%table.min-w-full
 		%thead.bg-gray-50
 			%tr
-				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 번호
 				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 이메일
 				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 가입 일자
 				%th.py-3.px-6.text-xs.font-medium.text-left.text-gray-700.tracking-wider 역할
@@ -14,12 +13,12 @@
 				%th.relative.py-3.px-6
 					%span.sr-only 수정
 		%tbody
-		- @users.each_with_index do |user, index|
+		- @users.each do |user|
 			%tr.border-b.odd:bg-white.even:bg-gray-50
-				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= index + 1
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap.font-medium= user.email
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= user.created_at
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= user.admin? ? "관리자" : "사용자"
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap= user.suspended? ? "이용 정지" : "이용 가능"
 				%td.py-4.px-6.text-sm.text-gray-900.whitespace-nowrap
 					= link_to "수정", edit_dashboard_user_path(user), class: "text-blue-600 hover:underline"
+= paginate @users

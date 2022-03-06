@@ -2,7 +2,7 @@ class Dashboard::FaqsController < Dashboard::AdminController
 	before_action :find_faq, only: [:edit, :update, :destroy]
 
 	def index
-		@faqs = Faq.all
+		@faqs = Faq.all.page(params[:page]).per(10)
 	end
 
 	def show

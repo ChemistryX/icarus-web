@@ -2,7 +2,7 @@ class Dashboard::UsersController < Dashboard::AdminController
 	before_action :find_user, only: [:edit, :update]
 
 	def index
-		@users = User.order_by(created_at: :asc)
+		@users = User.all.page(params[:page]).per(10)
 	end
 
 	def edit

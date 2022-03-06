@@ -7,6 +7,6 @@ Rails.application.routes.draw do
 	resources :plans
 	resources :faqs
   end
-  resources :faqs, only: [:index, :show]
+  get 'faqs', to: 'faqs#index'
   root "home#index"
 end
