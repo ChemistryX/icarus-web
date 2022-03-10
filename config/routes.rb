@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 	resources :faqs
   end
   get 'faqs', to: 'faqs#index'
+  get 'plans', to: 'plans#index'
   root "home#index"
 end

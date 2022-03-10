@@ -20,11 +20,11 @@
 		- @idx = index + 1
 		.accordion-wrapper(id="#{faq.id}")
 			%h2(id="accordion-collapse-heading-#{@idx}")
-				%button.flex.justify-between.items-center.p-5.w-full.font-medium.text-left.text-gray-900.bg-gray-100.border.border-b-0.border-gray-200(class="#{@idx == 1 ? "rounded-t-xl" : ""}" data-accordion-target="#accordion-collapse-body-#{@idx}" aria-expanded="false" aria-controls="accordion-collapse-body-#{@idx}")
+				%button.flex.justify-between.items-center.p-5.w-full.font-medium.text-left.text-gray-900.bg-white.border.rounded-xl.border-gray-200.my-2(data-accordion-target="#accordion-collapse-body-#{@idx}" aria-expanded="false" aria-controls="accordion-collapse-body-#{@idx}")
 					.flex
 						%span.mr-2.font-extrabold= Faq.human_attribute_name("category/%s" % faq.category)
 						%p= faq.question
 					= heroicon "chevron-down", options: { class: "w-6 h-6 rotate-180 shrink-0" }
 			%div.hidden(id="accordion-collapse-body-#{@idx}" aria-labelledby="accordion-collapse-heading-#{@idx}")
-				.p-5.border.border-gray-200(class="#{@idx == 1 ? "border-b-0" : "rounded-b-xl"}")
-					%p.mb-2.text-gray-500= faq.answer
+				.p-5.border.border-gray-200.rounded-xl.bg-white
+					%p.text-gray-500= faq.answer
